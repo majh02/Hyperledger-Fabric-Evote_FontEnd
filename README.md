@@ -1,1 +1,0 @@
-# Hyperledger-Fabric-Evote_FontEnd
