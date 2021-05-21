@@ -1,0 +1,74 @@
+doctype html
+html(lang='en')
+  head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+    link(rel='stylesheet' href='./CSSfile.css' type='text/css')
+  body
+    // pknu image
+    section
+      img#image(src='pknu.png')
+    // breadcrumb
+    section
+      nav(aria-label='breadcrumb')
+        ol.breadcrumb
+          li.breadcrumb-item.text-primary 로그인
+          li.breadcrumb-item.text-primary ①학과 학생회 선거
+          li.breadcrumb-item.text-primary ②단과대학 학생회 선거
+          li.breadcrumb-item.text-primary ③총학생회 선거
+    // progressbar
+    section
+      .progress
+        .progress-bar.bg-primary.w-25(role='progressbar' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100') 25%
+    // 투표시작(card)
+    section
+      br
+      br
+      br
+      .row
+        .col
+          form(action='./vote_department_KOR' method='post')
+            button.btn.btn-outline-primary.btn-block.mr-2(type='submit' style='height: 100px;' data-toggle='modal' data-target='#cantvote')
+              h3 투표하기
+            #cantvote.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
+              .modal-dialog.modal-lg
+                .modal-content
+                  .modal-header
+                    h4.modal-title 투표하실 수 없습니다.
+                    button.close(type='button' data-dismiss='modal')
+                      span(aria-hidden='true') ×
+                      span.sr-only Close
+                  .modal-body
+                    | 이미 투표 완료처리 된 학번입니다. 재투표 하실 수 없습니다.
+                  .modal-footer
+                    button.btn.btn-primary(type='button' data-dismiss='modal') 닫기
+        .col
+        
+          form(action='./result' method='post')
+            button.btn.btn-outline-info.btn-block.mr-2(type='submit' style='height: 100px;' data-toggle='modal' data-target='#result')
+              h3 투표 결과확인
+            #result.modal.fade(tabindex='-1' role='dialog' aria-labelledby='myModalLabel' aria-hidden='true')
+              .modal-dialog.modal-lg
+                .modal-content
+                  .modal-header
+                    h4.modal-title 투표가 완료되지 않았습니다.
+                    button.close(type='button' data-dismiss='modal')
+                      span(aria-hidden='true') ×
+                      span.sr-only Close
+                  .modal-body
+                    | 아직 투표기간이 종료되지 않았습니다.
+                    br
+                    |                        투표결과 확인은 2020년 12월 1일 오전 10시 이후 확인 가능합니다.
+                  .modal-footer
+                    button.btn.btn-info(type='button' data-dismiss='modal') 닫기
+          br
+          h5 투표결과 확인은 2020년 12월 1일 오전 10시이후 확인 가능합니다.
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+    script.

@@ -1,0 +1,149 @@
+doctype html
+html(lang='en')
+  head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+    link(rel='stylesheet' href='./CSSfile.css' type='text/css')
+    script(src='https://cdn.jsdelivr.net/npm/chart.js@2.8.0')
+  body
+    // pknu image
+    section
+      img#image(src='pknu.png')
+    // progressbar
+    section
+      .progress
+        .progress-bar.bg-primary.w-100(role='progressbar')
+      br
+      h5 스크롤을 밑으로 내리면 결과를 확인 할 수 있습니다.
+    .container
+      br
+      // 학과투표 결과 그래프
+      .card.border-info.card-body.d-flex.flex-column.align-items-start
+        .row
+          .col
+            h4#text.text-white.bg-info 학과 선거결과
+            canvas#Chart_department
+            br
+            br
+            p#text.card-title.text-primary 후보 2번 정다빈 님이 당선되었습니다.
+          .col
+            img#image3(src='국어국문2.jpg')
+      br
+      br
+      // 단과대투표 결과 그래프
+      .card.border-info.card-body.d-flex.flex-column.align-items-start
+        .row
+          .col
+            h4#text.text-white.bg-info 단과대학 선거결과
+            canvas#Chart_college
+            br
+            br
+            h4#text.card-title.text-primary 후보 1번 김채은 님이 당선되었습니다.
+          .col
+            img#image3(src='인사대1.jpg')
+      br
+      br
+      // 총학투표 결과 그래프
+      .card.border-info.card-body.d-flex.flex-column.align-items-start
+        .row
+          .col
+            h4#text.text-white.bg-info 총학생회 선거결과
+            canvas#Chart_total
+            br
+            br
+            h4#text.card-title.text-primary 후보 2번 이종석 님이 당선되었습니다.
+          .col
+            img#image3(src='총학2.jpg')
+    script.
+      // 학과 막대그래프
+      var ctx1 = document.getElementById('Chart_department');
+      var myChart1 = new Chart(ctx1, {
+      type: 'bar',
+      data: { labels: ['후보 1번 김설현', '후보 2번 정다빈'], //라벨(후보자) 이름
+      datasets: [{
+      label: '투표 수',
+      data: [20, 33],
+      backgroundColor: [ //막대그래프 배경
+      'rgba(255, 99, 132, 0.2)',
+      'rgba(54, 162, 235, 0.2)',
+      ],
+      borderColor: [  //막대그래프 테두리 색깔
+      'rgba(255, 99, 132, 1)',
+      'rgba(54, 162, 235, 1)',
+      ],
+      borderWidth: 1
+      }] },
+      options: {
+      scales: {
+      yAxes: [{
+      ticks: {
+      beginAtZero: true
+      }
+      }]
+      }
+      }
+      });
+      // 단과 막대그래프
+      var ctx2 = document.getElementById('Chart_college');
+      var myChart2 = new Chart(ctx2, {
+      type: 'bar',
+      data: { labels: ['후보 1번 김채은', '후보 2번 김현순'], //라벨(후보자) 이름
+      datasets: [{
+      label: '투표 수',
+      data: [123, 95],
+      backgroundColor: [ //막대그래프 배경
+      'rgba(153, 102, 255, 0.2)',
+      'rgba(255, 159, 64, 0.2)'
+      ],
+      borderColor: [ //막대그래프 테두리색
+      'rgba(153, 102, 255, 1)',
+      'rgba(255, 159, 64, 1)'
+      ],
+      borderWidth: 1
+      }] },
+      options: {
+      scales: {
+      yAxes: [{
+      ticks: {
+      beginAtZero: true
+      }
+      }]
+      }
+      }
+      });
+      // 총학 막대그래프
+      var ctx3 = document.getElementById('Chart_total');
+      var myChart3 = new Chart(ctx3, {
+      type: 'bar',
+      data: { labels: ['후보 1번 임현주', '후보 2번 이종석'], //라벨(후보자) 이름
+      datasets: [{
+      label: '투표 수',
+      data: [990, 1130],
+      backgroundColor: [ //막대그래프 배경색
+      'rgba(255, 206, 86, 0.2)',
+      'rgba(75, 192, 192, 0.2)'
+      ],
+      borderColor: [ //막대그래프 테두리색
+      'rgba(255, 206, 86, 1)',
+      'rgba(75, 192, 192, 1)'
+      ],
+      borderWidth: 1
+      }] },
+      options: {
+      scales: {
+      yAxes: [{
+      ticks: {
+      beginAtZero: true
+      }
+      }]
+      }
+      }
+      });
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')

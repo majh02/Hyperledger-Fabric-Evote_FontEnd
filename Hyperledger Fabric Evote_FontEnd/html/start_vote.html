@@ -1,0 +1,111 @@
+<!doctype html>
+  <html lang="en">
+    <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet"  href="./CSSfile.css" type="text/css">
+    </head>
+    <body>
+      <!-- pknu image -->
+      <section>
+        <img id="image" src="pknu.png">
+      </section>
+
+      <!-- breadcrumb -->
+      <section>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item text-primary">로그인</a></li>
+            <li class="breadcrumb-item text-primary">①학과 학생회 선거 </a></li>
+            <li class="breadcrumb-item text-primary">②단과대학 학생회 선거</a></li>
+            <li class="breadcrumb-item text-primary">③총학생회 선거</a></li>
+          </ol>
+        </nav>
+      </section>
+
+      <!-- progressbar -->
+      <section>
+        <div class="progress">
+          <div class="progress-bar bg-primary w-25" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+        </div>
+      </section>
+
+      <!-- 투표시작(card) -->
+      <section>
+        <br><br><br>
+        <div class="row">
+          <div class="col">
+            <form action="./vote_department_IT.html" method="post">
+              <button type="button" class="btn btn-outline-primary btn-block mr-2" style="height: 100px;" data-toggle="modal" data-target="#cantvote">
+                <h3>투표하기</h3>
+              </button>
+              <div class="modal fade" id="cantvote" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              	 <div class="modal-dialog modal-lg">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h4 class="modal-title">투표하실 수 없습니다.</h4>
+                       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                     </div>
+                     <div class="modal-body">
+                       이미 투표 완료처리 된 학번입니다. 재투표 하실 수 없습니다.
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+                     </div>
+                   </div>
+              	 </div>
+              </div>
+            </form>
+          </div>
+          <div class="col">
+            <!-- result.html로 넘어감 / 아직 result 페이지는 안 만들었음 -->
+            <form action="./result.html" method="post">
+              <button type="button" class="btn btn-outline-info btn-block mr-2" style="height: 100px;" data-toggle="modal" data-target="#result">
+                <h3>투표 결과확인</h3>
+              </button>
+              <div class="modal fade" id="result" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+              	 <div class="modal-dialog modal-lg">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <h4 class="modal-title">투표가 완료되지 않았습니다.</h4>
+                       <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+                     </div>
+                     <div class="modal-body">
+                       아직 투표기간이 종료되지 않았습니다.<br>
+                       투표결과 확인은 2020년 12월 1일 오전 10시 이후 확인 가능합니다.
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-info" data-dismiss="modal">닫기</button>
+                     </div>
+                   </div>
+              	 </div>
+              </div>
+            </form>
+            <br>
+            <h5>투표결과 확인은 2020년 12월 1일 오전 10시이후 확인 가능합니다.</h5>
+          </div>
+        </div>
+      </section>
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <script>
+        $( function () {
+          $( '[data-toggle="popover"]' ).popover({
+            trigger: 'hover',
+            html: true,
+            content: function () {
+              return '<img class="img-fluid" src="'+$(this).data('img') + '" />';
+            }
+          })
+        });
+      </script>
+    </body>
+  </html>

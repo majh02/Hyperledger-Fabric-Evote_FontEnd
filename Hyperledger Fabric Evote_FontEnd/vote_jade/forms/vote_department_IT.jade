@@ -1,0 +1,66 @@
+doctype html
+html(lang='en')
+  head
+    // Required meta tags
+    meta(charset='utf-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // Bootstrap CSS
+    link(rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' integrity='sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm' crossorigin='anonymous')
+    link(rel='stylesheet' href='./CSSfile.css' type='text/css')
+  body
+    // pknu image
+    section
+      img#image(src='pknu.png')
+    // breadcrumb
+    section
+      nav(aria-label='breadcrumb')
+        ol.breadcrumb
+          li.breadcrumb-item.text-primary 로그인
+          li.breadcrumb-item.active(aria-current='page') ①IT융합응용공학과 학생회 선거
+          li.breadcrumb-item.text-primary ②공과대학 학생회 선거
+          li.breadcrumb-item.text-primary ③총학생회 선거
+    // progressbar
+    section
+      .progress
+        .progress-bar.bg-primary.w-25(role='progressbar' aria-valuenow='25' aria-valuemin='0' aria-valuemax='100') 25%
+    // 후보자 사진
+    section
+      .container
+        .row
+          .col
+            a#image.col-sm-4(data-toggle='popover' data-title='1번 후보 공약' data-img='아이티1공약.png')
+              img#image2(src='아이티1.jpg')
+          // 후보자 선택 및 투표 버튼
+          .col(text-align='center')
+            section
+              form#popover(action='./end_department_CE' method='post')
+                .btn-group.btn-group-toggle(data-toggle='buttons')
+                  label.btn.btn-primary(data-toggle='popover' title='선택하신 후보자가 확실합니까?' data-content='선택하신 후보자를 다시 한번 확인해주세요.' data-placement='left')
+                    input#candidate1(type='radio' name='candidate1')
+                    |  기호 1번 성혜림
+                  label.btn.btn-primary(data-toggle='popover' title='선택하신 후보자가 확실합니까?' data-content='선택하신 후보자를 다시 한번 확인해주세요.' data-placement='right')
+                    input#candidate2(type='radio' name='candidate2')
+                    |  기호 2번 신유진
+                br
+                br
+                br
+                input.btn.btn-outline-primary.mr-2(type='submit' value='투표 완료')
+          .col
+            a#image.col-sm-4(data-toggle='popover' data-title='2번 후보 공약' data-img='아이티2공약.jpg')
+              img#image2(src='아이티2.jpg')
+      h6.text-primary <이미지에 커서를 가져가면 공약을 볼 수 있습니다>
+    // Optional JavaScript
+    // jQuery first, then Popper.js, then Bootstrap JS
+    script(src='https://code.jquery.com/jquery-3.2.1.slim.min.js' integrity='sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN' crossorigin='anonymous')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js' integrity='sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q' crossorigin='anonymous')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js' integrity='sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl' crossorigin='anonymous')
+    script.
+      $( function () {
+      $( '[data-toggle="popover"]' ).popover({
+      trigger: 'hover',
+      html: true,
+      content: function () {
+      return '<img class="img-fluid" src="'+$(this).data('img') + '" />';
+      }
+      })
+      });
