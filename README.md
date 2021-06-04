@@ -1,3 +1,3 @@
 # Hyperledger-Fabric-Evote_FontEnd
 하이퍼레저 패브릭 전자투표 시스템 - 프론트엔드  
-<video src=" https://user-images.githubusercontent.com/52205425/120780466-1df59500-c563-11eb-9e18-7324e3c6c4d2.mp4"/>
+<img width="944" alt="vote" src="https://user-images.githubusercontent.com/52205425/120782215-c0fade80-c564-11eb-8881-cf430bf8dfd0.png">
